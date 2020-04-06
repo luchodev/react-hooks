@@ -8,6 +8,7 @@ import {
   Button,
 } from "@material-ui/core";
 
+import { MovieIcon } from "../../icons";
 import styles from "./style";
 
 export default () => {
@@ -33,7 +34,7 @@ export default () => {
             <Typography className={classes.title}> Bienvenido!</Typography>
           </Grid>
           <Grid>
-            <label>Icono</label>
+            <MovieIcon className={classes.movieIcon} />
           </Grid>
         </Grid>
         <TextField
