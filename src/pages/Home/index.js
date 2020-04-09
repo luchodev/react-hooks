@@ -11,7 +11,7 @@ import {
 import { MovieIcon } from "../../icons";
 import styles from "./style";
 
-export default () => {
+export default ({ history }) => {
   const [searchText, setSearchText] = useState("");
   const classes = styles();
 
@@ -19,11 +19,11 @@ export default () => {
     setSearchText(event.target.value);
   };
 
-  const handleCleanTextClick = () => {
-    console.log(`Hey`);
+  const handleClearTextClick = () => {
+    setSearchText("");
   };
   const handleSearchTextClick = () => {
-    console.log(`Hey`);
+    history.push(`/results?movieName=${searchText}`);
   };
 
   return (
@@ -44,7 +44,7 @@ export default () => {
           onChange={handleSearchTextChange}
         />
         <Grid className={classes.buttonsContainer}>
-          <Button variant="contained" onClick={handleCleanTextClick}>
+          <Button variant="contained" onClick={handleClearTextClick}>
             Limpiar
           </Button>
           <Button
@@ -54,7 +54,7 @@ export default () => {
             className={classes.searchButton}
             onClick={handleSearchTextClick}
           >
-            Limpiar
+            Search
           </Button>
         </Grid>
       </Card>
