@@ -42,4 +42,5 @@ export function* searchMovieById({ payload }) {
 
 export default function* search() {
   yield takeLatest(SEARCH_MOVIE_START, searchMovie);
+  yield takeLatest(SEARCH_MOVIE_BY_ID_START, searchMovieById);
 }
